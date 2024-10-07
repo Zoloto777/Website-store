@@ -13,60 +13,60 @@ const senderEmail = 'kudesn1kescobar@gmail.com'
 const senderPass = 'ylak nyso ybfu dewr'
 
 // login user
-const loginUser = async(req,res) => {
-    const {email, password} = req.body;
+const loginUser = async (req, res) => {
+    const { email, password } = req.body;
 
     try {
-        const user = await userModel.findOne({email})
+        const user = await userModel.findOne({ email })
 
-        if (!user){
-            return res.json({success: false, message: "User does not exist"})
+        if (!user) {
+            return res.json({ success: false, message: "User does not exist" })
         }
 
         const isMatch = await bcrypt.compare(password, user.password)
-        
+
         if (!isMatch) {
-            return res.json({success: false, message: "Invalid password"})
+            return res.json({ success: false, message: "Invalid password" })
         }
-        else{
+        else {
             console.log("3")
         }
 
         const token = createToken(user._id)
-        res.json({success: true, token})
-    } catch(error){
+        res.json({ success: true, token })
+    } catch (error) {
         console.log(error)
-        res.json({success: false, message: error})
+        res.json({ success: false, message: error })
     }
 }
 const createToken = (id) => {
-    return jwt.sign({id}, process.env.JWT_SECRET)
+    return jwt.sign({ id }, process.env.JWT_SECRET)
 }
 //registre user
-const registerUser = async(req,res) => {
-    const {name, password, email , role} = req.body;
-    console.log({email})
-    try{
+const registerUser = async (req, res) => {
+    const { name, password, email, role } = req.body;
+    console.log({ email })
+    try {
         // checking does user exist
-        const exists = await userModel.findOne({email})
-        if (exists){
-            return res.json({success: false, message:"User already exists"})
+        const exists = await userModel.findOne({ email })
+        if (exists) {
+            return res.json({ success: false, message: "User already exists" })
         }
         // validating email format and strong password
-        if (!validator.isEmail(email)){
-            return res.json({success: false, message:"Enter valid email"})
+        if (!validator.isEmail(email)) {
+            return res.json({ success: false, message: "Enter valid email" })
         }
 
-        if (password.length < minLength){
-            return res.json({success: false, message:"Password is weak; too short"})
+        if (password.length < minLength) {
+            return res.json({ success: false, message: "Password is weak; too short" })
         }
 
         //hashing user password
         const salt = await bcrypt.genSalt(10)
-        const hashedPassword = await bcrypt.hash(password,salt)
+        const hashedPassword = await bcrypt.hash(password, salt)
 
         const newUser = new userModel({
-            name : name,
+            name: name,
             email: email,
             password: hashedPassword,
             role: role || 'user'
@@ -74,31 +74,31 @@ const registerUser = async(req,res) => {
 
         const user = await newUser.save()
         const token = createToken(user._id)
-        res.json({success: true, token})
+        res.json({ success: true, token })
 
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
-        res.json({success: false, message: "Error"})
+        res.json({ success: false, message: "Error" })
     }
 }
 
 // request password reset
-const requestPasswordReset = async (req,res) => {
-    const {email} = req.body;
-    const user = await userModel.findOne({email})
+const requestPasswordReset = async (req, res) => {
+    const { email } = req.body;
+    const user = await userModel.findOne({ email })
 
     try {
-        if (!validator.isEmail(email)){
-            return res.json({success: false, message:"Enter a valid email"})
+        if (!validator.isEmail(email)) {
+            return res.json({ success: false, message: "Enter a valid email" })
         }
 
-        if (!user){
-            return res.json({success: false, message:"No acoount with this email"})
+        if (!user) {
+            return res.json({ success: false, message: "No acoount with this email" })
         }
         // Generate reset token
         const token = crypto.randomBytes(32).toString('hex');
-    
+
         // Set token and expiration on user model
         user.resetPasswordToken = token;
         user.resetPasswordExpires = Date.now() + 7200000; // 1 hour from now
@@ -108,11 +108,11 @@ const requestPasswordReset = async (req,res) => {
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: senderEmail,
-              pass: senderPass
+                user: senderEmail,
+                pass: senderPass
             }
-          });
-          console.log(email)
+        });
+        console.log(email)
 
         var mailOptions = {
             from: senderEmail,
@@ -122,28 +122,28 @@ const requestPasswordReset = async (req,res) => {
             Please click on the following link, or paste this into your browser to complete the process:\n\n
             http://localhost:4000/reset-password/${token}\n\n
             If you did not request this, please ignore this email and your password will remain unchanged.\n`,
-          };
-        
+        };
+
         // sending the mail
-        transporter.sendMail(mailOptions, function(error, info){
+        transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-              console.log("Sending email error: " + error);
+                console.log("Sending email error: " + error);
             } else {
-              console.log('Email sent: ' + info.response);
+                console.log('Email sent: ' + info.response);
             }
-        
+
 
         });
 
         return res.status(200).send('Password reset email sent.');
-    } catch(error){
+    } catch (error) {
         console.log(error)
-        res.json({success: false, message: "Error"})
+        res.json({ success: false, message: "Error" })
     }
 }
 
 // reset password
-const resetPassword = async(req,res) => {
+const resetPassword = async (req, res) => {
     try {
         const { token } = req.query;
         const { newPassword } = req.body;
@@ -153,13 +153,13 @@ const resetPassword = async(req,res) => {
 
         // Find the user
         const user = await userModel.findOne({
-          resetPasswordToken: trimmedToken,
-          resetPasswordExpires: { $gt: Date.now() }, // Ensure the token hasn't expired
+            resetPasswordToken: trimmedToken,
+            resetPasswordExpires: { $gt: Date.now() }, // Ensure the token hasn't expired
         });
-        
+
         // Check if the user exists
         if (!user) {
-          return res.json({success: false,message: "no user was found", data: user});
+            return res.json({ success: false, message: "no user was found", data: user });
         }
 
         // Hash the new password and save it
@@ -169,13 +169,13 @@ const resetPassword = async(req,res) => {
         // Clear the reset token fields
         user.resetPasswordToken = undefined;
         user.resetPasswordExpires = undefined;
-    
+
         await user.save();
-    
+
         res.status(200).send('Password has been updated.');
-      } catch (error) {
+    } catch (error) {
         res.status(500).send('Error resetting password');
-      }
+    }
 }
 
 // The code to compare char codes of 2 strings, help me with some things, not used for now
@@ -183,8 +183,8 @@ const resetPassword = async(req,res) => {
 const compareCharCodes = (str1, str2) => {
     console.log('Comparing char codes...');
     for (let i = 0; i < Math.max(str1.length, str2.length); i++) {
-      console.log(`Char at position ${i}:`, str1.charCodeAt(i), str2.charCodeAt(i));
+        console.log(`Char at position ${i}:`, str1.charCodeAt(i), str2.charCodeAt(i));
     }
-  };
+};
 
-export {loginUser, registerUser, resetPassword,requestPasswordReset}
+export { loginUser, registerUser, resetPassword, requestPasswordReset }

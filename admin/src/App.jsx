@@ -7,6 +7,7 @@ import Orders from "./pages/Orders/Orders.jsx";
 import List from "./pages/List/List.jsx";
 
 const App = () => {
+  const url = "http://localhost:4000"
   return (
     <div>
          <Navbar/>
@@ -14,9 +15,9 @@ const App = () => {
          <div className = "app-content">
           <Sidebar/>
           <Routes>
-            <Route path = "/add" element = {<Add/>}/>
-            <Route path = "/list" element = {<List/>}/>
-            <Route path = "/orders" element = {<Orders/>}/>
+            <Route path = "/add" element = {<Add url = {url}/>}/>
+            <Route path = "/list" element = {<List url = {url}/>}/>
+            <Route path = "/orders" element = {<Orders url = {url}/>}/>
           </Routes>
          </div>
     </div>

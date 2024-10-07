@@ -1,0 +1,47 @@
+.main {
+    width: 1320px;
+    height: 919px;
+    top: 2455px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.name {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 35.2px;
+    margin-left: 516px;
+
+}
+
+.tab-list {
+    width: 493px;
+    top: 51px;
+    margin-left: 413px;
+    gap: 8px;
+    opacity: 0px;
+    display: flex; 
+    list-style: none;
+    margin-top: 16px;
+}
+
+.tab-item {
+    font: DM Sans;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #9A9CAA;
+    cursor: pointer
+}
+
+.products-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(312px,1fr));
+    margin-top: 40px;
+    row-gap: 40px;
+}
+
+

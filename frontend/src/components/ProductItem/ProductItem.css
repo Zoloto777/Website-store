@@ -1,0 +1,114 @@
+.product-info{
+    display: flex;
+    margin-top: 14px;
+}
+
+.product-name-price {
+    width: 256px;
+    height: 51px;
+    gap: 10px;
+}
+
+.product-name {
+    width: 256px;
+    height: 21px;   
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+    color: #272343;    
+}
+
+.prices {
+    display: flex;
+    margin-top: 10px;
+}
+
+.product-price{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 19.8px;
+    text-align: left;     
+}
+
+.product-price-discounted{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15.4px;
+    text-align: left;
+    margin-left: 2.5px;
+    color: #9A9CAA
+}
+
+.product-image-status{
+    position: relative;
+}
+
+.highlighted-text {
+    box-shadow: 0px 2px 0px 0px #038053;
+    color: #272343;
+    cursor: pointer; 
+  }
+
+.product-status {
+    position: absolute;
+    width: 54px;
+    height: 26px;
+    top: 20px;
+    left: 20px;
+    padding: 6px 10px 6px 10px;
+    gap: 10px;
+    border-radius: 4px;
+    background-color: #F5813F;
+}
+
+.product-status-name {
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 14.3px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.heart-container {
+    display: none;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    top: 20px;
+    left: 248px;
+    background-color:#FFFFFFCC;  
+}
+
+.heart {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    top: 11px;
+    left: 11px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-select:hover .heart-container {
+    display: block;
+    opacity: 1;
+}
+
+.add-cart{
+    width: 44px;
+    height: 44px;
+    margin-left: 12px;   
+    cursor: pointer;  
+}
+
+.product-img {
+    width: 312px;
+    height: 312px;
+    border-radius: 10px; 
+}
