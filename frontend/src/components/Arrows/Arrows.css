@@ -1,0 +1,24 @@
+.arrows-container{
+    width: 106px;
+    height: 44px; 
+    display: flex;
+    gap: 18px; 
+}
+
+.arrows-circle {
+    width: 44px;
+    height: 44px;
+    background: rgba(240, 242, 243, 1);
+    border-radius: 26px;
+    padding: 12px;
+}
+
+
+.arrows-circle p {
+    width: 24px;
+    height: 24px;
+    padding: 7.5px 4px 7.5px 4px;
+    gap: 0px;
+    opacity: 0px;
+       
+}

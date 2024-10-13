@@ -8,6 +8,10 @@ const StoreContextProvider = (props) => {
     const [token, setToken] = useState('')
     const [product_list,setProductList] = useState([])
     
+    const getNotification = async () => {
+        const response = await axios.get(url + "/api/order/list")
+        console.log(response.data.data)
+    }
 
     const addToCart = async (itemId) => {
         console.log(itemId)
@@ -71,7 +75,8 @@ const StoreContextProvider = (props) => {
         setToken,
         addToCart,
         removeFromCart,
-        getTotalCartAmount
+        getTotalCartAmount,
+        getNotification
     }
 
     return (

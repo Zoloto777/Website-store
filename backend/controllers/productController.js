@@ -74,8 +74,8 @@ const updateProduct = async (req, res) => {
     // Find the product by ID and update the specific field(s)
     const updatedProduct = await productModel.findByIdAndUpdate(
       id,
-      { $set: updateFields },  // Dynamically update the fields
-      { new: true }            // Return the updated document
+      { $set: updateFields },  
+      { new: true }            
     );
 
     if (!updatedProduct) {

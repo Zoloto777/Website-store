@@ -208,3 +208,23 @@
     background-color: white;
     display: flex;
 }
+
+.notification{
+    position: absolute;
+    background-color: red;
+    width: 17px;
+    height: 17px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    right: 310px;
+    top:50px;
+    display: none;
+}
+
+.notification span{
+    color: black;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

@@ -79,7 +79,7 @@ const TopCategories = () => {
                     {visibleItems.map((item, index) => (
                         <div
                             className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-                            key={item.id} // Use unique id for the key
+                            key={item.id} 
                         >
                             <img src={item.image} alt={item.name} />
                             <div className="item-info">

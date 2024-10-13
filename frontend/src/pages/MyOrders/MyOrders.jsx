@@ -20,6 +20,7 @@ const MyOrders = () => {
 
     return (
         <div className='my-orders'>
+            {console.log(data)}
             <h2>My orders</h2>
             <div className='container'>
                 {data.map((order,index) => {

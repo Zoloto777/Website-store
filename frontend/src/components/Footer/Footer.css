@@ -1,0 +1,272 @@
+.footer-content {
+    height: 343px; 
+    display: flex;
+    
+}
+
+.footer-container {
+    box-shadow: 0px 1px 0px 0px rgba(225, 227, 229, 1) inset;
+    background: rgba(255, 255, 255, 1);
+}
+.company-info {
+    margin-bottom: 60px;
+    margin-top: 80px;
+    width: 350px;
+    height: 198px;
+    gap: 24px;
+    margin-left: 300px;
+}
+
+.company-info p {
+    margin-top: 24px;
+    width: 350px;
+    height: 72px;
+    opacity: 60%;
+    color: rgba(39, 35, 67, 1);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 24px;
+    gap: 12px;
+}
+
+.social-icons a{
+    width: 38px;
+    height: 38px;
+    border: 1px 0px 0px 0px;
+    color: rgba(99, 98, 112, 1);
+    font-size: 24px;
+    display: inline-block;
+    border-radius: 50%; 
+    line-height: 30px;     
+    text-align: center;
+    padding-top: 2.5px;
+    padding-left: 0.5px;
+    transition: all 0.3s ease-in-out; 
+}
+
+.social-icons a:hover {
+    border: 1px solid rgba(0, 117, 128, 1);
+    color: rgba(0, 117, 128, 1);
+}
+
+.category{
+    margin-bottom: 60px;
+    margin-top: 80px;
+    position: relative;
+    width: 105px;
+    height: 203px;
+    gap: 20px;
+    margin-left: 97px;
+}
+
+.category h4 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    width: 82px;
+    height: 15px;
+    color: rgba(154, 156, 170, 1);
+}
+
+.category ul {
+    width: 105px;
+    height: 168px;
+    gap: 12px;
+    opacity: 0px; 
+    margin-top: 20px;                            
+}
+
+.category li{
+    max-width: 105px;
+    color: rgba(39, 35, 67, 1);
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: left;    
+    text-decoration: none;    
+    list-style-type: none;
+}
+
+.category li:hover {
+    color: rgba(0, 117, 128, 1);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 117, 128, 1);
+    text-decoration-thickness: 1px;
+}
+
+
+.support{
+    margin-bottom: 60px;
+    margin-top: 80px;
+    margin-left: 119.5px;
+}
+
+.support h4{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: rgba(154, 156, 170, 1)
+}
+.support ul {
+    margin-top: 20px;
+    width: 157px;
+    height: 143px;
+}
+
+.support li {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: left;
+    list-style-type: none;
+    color: rgba(39, 35, 67, 1);
+    margin-bottom: 16px;
+}
+
+.support li:hover {
+    color: rgba(0, 117, 128, 1);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 117, 128, 1);
+    text-decoration-thickness: 1px;
+}
+
+.newsletter {
+    margin-top: 80px;
+    margin-bottom: 60px;
+    width: 424px;
+    height: 142px;
+    margin-left: 68.5px;
+    margin-right: 300px;
+    border-radius: 8px 0px 0px 0px;
+    border: 1px;
+    opacity: 0px;
+
+}
+
+.newsletter h4 {
+    width: 102px;
+    height: 15px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    letter-spacing: 0.06em;
+    text-align: left; 
+    color: rgba(154, 156, 170, 1);
+}
+
+.newsletter-input {
+    display: flex;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.newsletter-input input {
+    width: 285px;
+    height: 46px;
+    border-radius: 8px;
+    border: 1px 0px 0px 0px;
+    border: 1px solid rgba(225, 227, 229, 1) 
+}
+.newsletter-input ::placeholder{
+    width: 79px;
+    height: 16px; 
+    color: rgba(154, 156, 170, 1);   
+    opacity: 1;
+    font-family: Inter;   
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;    
+}
+
+.newsletter-input button {
+    width: 127px;
+    height: 46px;
+    top: 115px;
+    left: 1493px;
+    padding: 14px 24px 14px 24px;
+    gap: 20px;
+    border-radius: 8px;
+    opacity: 0px;
+    background: rgba(2, 159, 174, 1);    
+    border: 1px solid rgba(2, 159, 174, 1);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 17.6px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+
+
+.newsletter p {
+    width: 424px;
+    height: 46px;
+    opacity: 60%;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22.5px;
+    text-align: left;
+    margin-top: 15px;
+    color: rgba(39, 35, 67, 1);
+}
+
+.footer-bottom {
+    height: 75px;
+    top: 343px;
+    padding: 24px 300px 24px 300px;
+    gap: 0px;
+    justify-content: space-between;
+    opacity: 0px;
+    display: flex;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 0px 0px rgba(225, 227, 229, 1) inset;
+}
+
+.footer-bottom p{
+    width: 341px;
+    height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;  
+    color: rgba(154, 156, 170, 1);
+}
+
+.footer-bottom p span {
+    opacity: 100%;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;     
+    color: rgba(0, 0, 0, 1);  
+}
+
+.payment-icons {
+    display: flex;
+    width: 227px;
+    height: 21px;
+    gap: 10px;
+    opacity: 50%;
+}

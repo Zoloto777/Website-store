@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
 import { StoreContext } from '../../context/StoreContext'
-import './OurProducts.css'
 import ProductItem from '../ProductItem/ProductItem.jsx'
+import './OurProducts.css'
 
 function OurProducts() {
     const [selectedTab, setSelectedTab] = useState(null);

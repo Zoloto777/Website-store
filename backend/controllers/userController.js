@@ -178,6 +178,65 @@ const resetPassword = async (req, res) => {
     }
 }
 
+const getUsers = async (req, res) => {
+    try {
+        const users = await userModel.find({})
+        res.json({ success: true, data: users })
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" })
+    }
+}
+
+const updateUsers = async (req, res) => {
+    try {
+        const { id } = req.query;
+        const { field, value } = req.body;
+        const image = req.file;
+
+        // Build update object
+        const updateFields = {};
+
+        if (field && value) {
+            updateFields[field] = value;
+        }
+
+        if (image) {
+            // Append the image filename to the update fields
+            updateFields.image = image.filename;
+            const currentProduct = await userModel.findById(id)
+            fs.unlink(`uploads/${currentProduct.image}`, () => { })
+        }
+
+        // Find the product by ID and update the specific field(s)
+        const updatedProduct = await userModel.findByIdAndUpdate(
+            id,
+            { $set: updateFields },
+            { new: true }
+        );
+
+        if (!updatedProduct) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+
+        res.json({ success: true, data: updatedProduct }); // Send back the updated product
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+}
+
+const removeUser = async (req, res) => {
+    try {
+        await userModel.findByIdAndDelete(req.body.id)
+        res.json({ success: true, message: "user removed" })
+    }
+    catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" })
+    }
+}
+
+
 // The code to compare char codes of 2 strings, help me with some things, not used for now
 // Код для сравнения чар кодов 2 строк, он мне помог с кое-чем, сейчас не используется
 const compareCharCodes = (str1, str2) => {
@@ -187,4 +246,4 @@ const compareCharCodes = (str1, str2) => {
     }
 };
 
-export { loginUser, registerUser, resetPassword, requestPasswordReset }
+export { loginUser, registerUser, resetPassword, requestPasswordReset, getUsers, updateUsers, removeUser }

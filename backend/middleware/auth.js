@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken"
 
 const authMiddleware = async (req, res, next) => {
     const { token } = req.headers
-    const token_trimmed = token.replace(/^"|"$/g, '')
     if (!token) {
         return res.json({ success: false, message: "Not authorized" })
     }

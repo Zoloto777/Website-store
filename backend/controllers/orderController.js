@@ -4,6 +4,7 @@ import express from "express"
 import Stripe from "stripe"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+
 // placing user order for fronted
 const placeOrder = async (req, res) => {
     const app = express();
@@ -59,7 +60,6 @@ const placeOrder = async (req, res) => {
     }
 }
 
-
 const verifyOrders = async (req, res) => {
     const { orderId, success } = req.body;
     try {
@@ -106,6 +106,8 @@ const updateStatus = async(req,res) =>{
     try {
         await orderModel.findByIdAndUpdate(req.body.orderId, {status: req.body.status})
         res.json({success:true,message:"Status Update"})
+
+        
     } catch (error) {
         console.log(error);
         res.json({success:false,message:"Error"})

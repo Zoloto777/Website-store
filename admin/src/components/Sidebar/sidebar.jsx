@@ -3,7 +3,9 @@ import './sidebar.css'
 import additem from '../../assets/add_item.png'
 import listitems from '../../assets/list_items.png'
 import orders from '../../assets/orders.png'
+import users from '../../assets/users.png'
 import { NavLink } from 'react-router-dom'
+
 const sidebar = () => {
   return (
     <div className = 'sidebar'>
@@ -19,6 +21,10 @@ const sidebar = () => {
         <NavLink to = "/orders" className="sidebar-option">
             <img src = {orders} alt =""/>
             <p>Orders</p>
+        </NavLink>
+        <NavLink to = "/users" className="sidebar-option">
+            <img src = {users} alt =""/>
+            <p>Users</p>
         </NavLink>
       </div>
     </div>

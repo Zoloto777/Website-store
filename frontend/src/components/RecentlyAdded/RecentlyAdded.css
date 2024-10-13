@@ -1,0 +1,25 @@
+.recently-added{
+    padding: 0px 300px 0px 300px;
+}
+
+.header-holder {
+    display: flex;
+}
+.recently-added h4 {
+    width: 246px;
+    height: 35px;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 35.2px;
+    text-align: left;    
+    color: rgba(39, 35, 67, 1);
+}
+
+.recent-products-list {
+    display: flex;
+    gap: 18px;
+    margin-top: 40px;
+}
+
+

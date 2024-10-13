@@ -1,30 +1,42 @@
-import React, { useContext, useState, useNavigate } from 'react'
-import RegisterPopup from '../../components/LoginPopup/LoginPopup.jsx'
+import React, { useContext, useState, useNavigate, useEffect } from 'react'
 import './Navbar.css'
 import check from '../../assets/check.svg'
 import dropdownicon from '../../assets/dropdown-icon.svg'
 import clock from '../../assets/exclamation.svg'
 import logo from '../../assets/logo.svg'
 import search from '../../assets/search.svg'
-import buy from '../../assets/buy.svg'
 import heart from '../../assets/heart.svg'
 import profile from '../../assets/profile.svg'
-import Loginpopup from '../../components/LoginPopup/LoginPopup.jsx'
 import { StoreContext } from '../../context/StoreContext.jsx'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import OrderStatusPopup from '../Notification/Notification.jsx'
 
 const Navbar = ({ setShowLogin }) => {
-
-    const { token, setToken } = useContext(StoreContext)
+    const url = 'http://localhost:4000'
+    const { token, setToken, getNotification } = useContext(StoreContext)
+    const [data, setData] = useState([]);
     const navigate = useNavigate
+
     const logout = () => {
         localStorage.removeItem("token");
         setToken("");
         navigate("/")
-        console.log("ee")
     }
-    return (
 
+    const fetchOrders = async () => {
+        const response = await axios.post(url + "/api/order/userorders", {}, { headers: { token } })
+        setData(response.data.data)
+        console.log(response.data.data)
+    }
+
+    useEffect(() => {
+        if (token) {
+            fetchOrders();
+        }
+    }, [token])
+
+    return (
         <nav className='navbar'>
             <div className='top'>
                 <div className='free-shipping'>
@@ -32,7 +44,6 @@ const Navbar = ({ setShowLogin }) => {
                     <p >Free Shipping On All Orders $50</p>
                 </div>
                 <div className='links'>
-
                     <div className='language'>
                         <div>
                             <select className='select-language'>
@@ -58,9 +69,11 @@ const Navbar = ({ setShowLogin }) => {
             </div>
 
             <div className='middle'>
-                <div className='logo'>
-                    <img src={logo} />
-                </div>
+                <Link to={'/'}>
+                    <div className='logo'>
+                        <img src={logo} />
+                    </div>
+                </Link>
 
                 <div className='search'>
                     <input className='search-input' type="search" placeholder='Search here' />
@@ -89,6 +102,24 @@ const Navbar = ({ setShowLogin }) => {
                         <img src={profile} />
                     </div> :
                         <div>
+
+                            <div className='container'>
+                                {data.map((order, index) => {
+                                    var currentStatus = "Product processing"
+                                    return (
+                                        <div key ={index}>
+                                         {currentStatus != order.status 
+                                         }
+                                        <OrderStatusPopup orderStatus={order.status} />
+                                    </div>
+                                    )
+                                })}
+                            </div>
+                            {/* </OrderStatusPopup>
+                            <div  className='notification'>
+
+                                <span >2</span> */}
+                            {/* </div> */}
                             <img src={profile} />
                             <span onClick={logout} >Logout</span>
                         </div>
