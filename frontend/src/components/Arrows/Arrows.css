@@ -11,14 +11,23 @@
     background: rgba(240, 242, 243, 1);
     border-radius: 26px;
     padding: 12px;
+    transition: background-color 0.3s ease;
 }
 
 
 .arrows-circle p {
     width: 24px;
     height: 24px;
-    padding: 7.5px 4px 7.5px 4px;
-    gap: 0px;
-    opacity: 0px;
-       
+    margin-left: 2px;
+
+    /* padding: 7.5px 4px 7.5px 4px; */
+}
+
+/* Class that applies the background color when clicked */
+.clicked {
+    background: rgba(0, 117, 128, 1);
+}
+
+.clicked p {
+    color: white; /* Change text color to white */
 }

@@ -21,11 +21,12 @@
 }
 
 .recent-products-list {
-    width: 1320px;
-    overflow: hidden;
     display: flex;
     gap: 18px;
     margin-top: 40px;
 }
 
 
+.featured-header {
+    
+}

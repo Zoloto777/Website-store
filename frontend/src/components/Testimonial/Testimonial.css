@@ -1,0 +1,117 @@
+.testimonial {
+    height: 589px;
+    padding: 80px 0px 80px 0px;
+    gap: 40px;
+    opacity: 0px;
+    background: rgba(240, 242, 243, 1);
+    margin-bottom: 80px;
+}
+
+.testimonial-header {
+    height: 44px;
+    padding: 0px 300px 0px 300px;
+    gap: 0px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.testimonial-header h4 {
+    width: 416px;
+    height: 35px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 35.2px;
+    text-align: left;
+}
+
+.testimonials-main {
+    height: 345px;
+    display: flex;
+    gap: 24px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.testimonial-card {
+    width: 648px;
+    height: 345px;
+    gap: 25px;
+    border-radius: 12px; 
+    background: rgba(255, 255, 255, 1);
+    margin-top: 40px;
+    margin-bottom: 80px;
+    box-shadow: 0px 8px 40px 0px rgba(39, 35, 67, 0.08);
+}
+
+.comment {
+    /* position: relative; */
+    overflow: scroll;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 568px;
+    height:180px;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: rgba(99, 98, 112, 1);
+    box-shadow: 2px 0px 0px 0px rgba(2, 159, 174, 1) inset;
+
+}
+
+.profile {
+    position: relative;
+    display: flex;
+    width: 211px;
+    height: 60px;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.profile-container {
+    display: flex;
+}
+
+.pfp {
+    width: 60px;
+    height: 60px; 
+    border-radius: 50px;
+}
+.profile-info{
+    width: 139px;
+    height: 52px;
+    gap: 2px;
+    opacity: 0px;  
+    margin-top: 4px;  
+    margin-bottom: 4px;
+    margin-left: 12px;
+}
+
+.profile-name {
+    color: rgba(39, 35, 67, 1);
+    width: 139px;
+    height: 28px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;    
+}
+
+.profile-desc {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    text-align: left;
+    color: rgba(154, 156, 170, 1);
+}
+
+.quotes {
+    position: absolute;
+    width: 163px;
+    height: 163px;
+    left: 410px;
+    bottom: -60px;
+}

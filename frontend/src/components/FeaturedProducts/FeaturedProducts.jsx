@@ -2,14 +2,14 @@ import React from 'react'
 import ProductItem from '../ProductItem/ProductItem'
 import { StoreContext } from '../../context/StoreContext'
 import { useContext } from 'react'
-import './RecentlyAdded.css'
+import './FeaturedProducts.css'
 import Arrows from '../Arrows/Arrows'
-const RecentlyAdded = () => {
+const FeaturedProducts = () => {
     const { product_list } = useContext(StoreContext)
     return (
         <div className='recently-added'>
-            <div className='header-holder'>
-                <h4>Recently added</h4>
+            <div className='featured-header header-holder'>
+                <h4>Featured products</h4>
                 <Arrows className = "arrows" />
             </div>
             <div className='recent-products-list'>
@@ -24,4 +24,4 @@ const RecentlyAdded = () => {
     )
 }
 
-export default RecentlyAdded
+export default FeaturedProducts

@@ -228,3 +228,31 @@
     font-size: 15px;
     margin-bottom: 20px;
 }
+
+.all-categories {
+    width: 176px;
+    height: 47px;
+    padding: 16px 24px 16px 24px;
+    gap: 16px;
+    border-radius: 6px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    text-align: left;  
+    margin-top: 14px;
+}
+
+/* .all-links {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    text-align: left;
+    color: rgba(99, 98, 112, 1);
+}
+
+.all-links span {
+    margin-left: 605px;
+} */

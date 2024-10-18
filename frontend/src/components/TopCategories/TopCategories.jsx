@@ -40,8 +40,7 @@ const TopCategories = () => {
         { ...items[0], id: items[0].id + 200 }, // Unique key for the next item
     ];
 
-    const handleNext = () => {
-        
+    const handleNext = () => {   
         setCurrentIndex((prevIndex) => prevIndex + 1);
     };
 

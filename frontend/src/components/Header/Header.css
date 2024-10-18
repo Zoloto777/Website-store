@@ -1,0 +1,136 @@
+.main-header {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    height: 850px; 
+    background-color: rgba(240, 242, 243, 1);
+    margin-left: 90px;
+    margin-right: 90px;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.header-arrow-left {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: 399px;
+    left: 88px; 
+}
+
+.header-arrow-right {
+    width: 52px;
+    height: 52px;
+    margin-top: 399px;
+    margin-right: 88px;
+    margin-left: 700px;
+}
+
+.hero-info {
+    width: 631px;
+    height: 323px;
+    border-radius: 8px; 
+    margin-top: 263px;
+    margin-left: 210px;
+}
+
+.upper-text {
+    width: 177px;
+    height: 14px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 12%;
+    text-align: left;
+    color: rgba(39, 35, 67, 1);
+}
+
+.main-text {
+    width: 631px;
+    height: 225px;
+    top: 285px;
+    left: 210px; 
+    font-family: Inter;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 74.8px;
+    text-align: left;
+    color: rgba(39, 35, 67, 1);     
+}
+
+.hero-info button {
+    width: 171px;
+    height: 52px;
+    padding: 14px 24px 14px 24px;
+    gap: 20px;
+    border-radius: 8px;
+    opacity: 0px;
+    background: rgba(2, 159, 174, 1);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 17.6px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(2, 159, 174, 1);
+}
+
+
+
+.bg-shape {
+    position: absolute;
+    left: 804px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.main-img {
+    z-index: 2;
+    position: absolute;
+    width: 475px;
+    height: 649px;
+    top: 82px;
+    left: 974px;   
+}
+
+.discount img {
+    z-index: 3;
+    position: absolute;
+    width: 140px;
+    height: 124px;
+    top: 82px;
+    left: 1356px;
+    gap: 0px;
+    opacity: 0px;   
+}
+
+.discount-num {
+    z-index: 4;
+    position: absolute;
+    width: 79px;
+    height: 40px;
+    top: 115px;
+    left: 1387px;
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 39.6px;
+    text-align: center;
+    color: rgba(240, 92, 82, 1);    
+}
+
+.discount-name {
+    z-index: 4;
+    position: absolute;
+    width: 62px;
+    height: 15px;
+    top: 157px;
+    left: 1395px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: rgba(39, 35, 67, 1);  
+}
